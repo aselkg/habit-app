@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div id="habit_list" class="flex flex-wrap justify-around">
+  {% for habit in habits %}
+  <article>
+    <div id="habit" class="fl-r outline w-90 pa4 mr2">
+      <a class="habit_link" href="{% url 'habit_detail' habit.pk %}">
+        <h4> I want to {{ habit.name }} {{ habit.goal }} {{ habit.unit }} </h4>
+
+      </a>
+
+  </article>
+  <br><br>
+  {% endfor %}
+</div>
+</div>
+{% endblock %}
